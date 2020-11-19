@@ -26,7 +26,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 203,
+   "execution_count": 297,
    "metadata": {},
    "outputs": [
     {
@@ -224,7 +224,7 @@
        "[5 rows x 329 columns]"
       ]
      },
-     "execution_count": 203,
+     "execution_count": 297,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -240,7 +240,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 204,
+   "execution_count": 298,
    "metadata": {},
    "outputs": [
     {
@@ -276,7 +276,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 256,
+   "execution_count": 299,
    "metadata": {
     "scrolled": true
    },
@@ -298,7 +298,7 @@
        "Length: 329, dtype: float64"
       ]
      },
-     "execution_count": 256,
+     "execution_count": 299,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -317,27 +317,27 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 291,
+   "execution_count": 305,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "id                    NaN\n",
-       "20-6-2013     3642.416667\n",
-       "21-6-2013     9034.724280\n",
-       "22-6-2013    10889.636691\n",
-       "23-6-2013     7402.847973\n",
-       "                 ...     \n",
-       "9-5-2014      9570.690141\n",
-       "10-5-2014     7614.848837\n",
-       "11-5-2014     6805.925926\n",
-       "12-5-2014     7505.530303\n",
-       "13-5-2014             NaN\n",
-       "Name: Steps per day, Length: 329, dtype: float64"
+       "id               NaN\n",
+       "20-6-2013     3642.0\n",
+       "21-6-2013     9035.0\n",
+       "22-6-2013    10890.0\n",
+       "23-6-2013     7403.0\n",
+       "              ...   \n",
+       "9-5-2014      9571.0\n",
+       "10-5-2014     7615.0\n",
+       "11-5-2014     6806.0\n",
+       "12-5-2014     7506.0\n",
+       "13-5-2014        NaN\n",
+       "Name: 928, Length: 329, dtype: float64"
       ]
      },
-     "execution_count": 291,
+     "execution_count": 305,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -349,7 +349,7 @@
     "        return float('NaN')\n",
     "    else: \n",
     "        return x\n",
-    "mean_steps = mean.apply(below_500)\n",
+    "mean_steps = mean_steps[928].apply(below_500)\n",
     "mean_steps\n",
     "\n"
    ]
@@ -370,7 +370,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 292,
+   "execution_count": 307,
    "metadata": {},
    "outputs": [
     {
@@ -401,28 +401,28 @@
        "  <tbody>\n",
        "    <tr>\n",
        "      <td>0</td>\n",
+       "      <td>id</td>\n",
+       "      <td>465.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <td>1</td>\n",
        "      <td>20-6-2013</td>\n",
        "      <td>3642.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>1</td>\n",
+       "      <td>2</td>\n",
        "      <td>21-6-2013</td>\n",
        "      <td>9035.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>2</td>\n",
+       "      <td>3</td>\n",
        "      <td>22-6-2013</td>\n",
        "      <td>10890.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>3</td>\n",
+       "      <td>4</td>\n",
        "      <td>23-6-2013</td>\n",
        "      <td>7403.0</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <td>4</td>\n",
-       "      <td>24-6-2013</td>\n",
-       "      <td>8110.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <td>...</td>\n",
@@ -431,28 +431,28 @@
        "    </tr>\n",
        "    <tr>\n",
        "      <td>323</td>\n",
+       "      <td>8-5-2014</td>\n",
+       "      <td>7210.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <td>324</td>\n",
        "      <td>9-5-2014</td>\n",
        "      <td>9571.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>324</td>\n",
+       "      <td>325</td>\n",
        "      <td>10-5-2014</td>\n",
        "      <td>7615.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>325</td>\n",
+       "      <td>326</td>\n",
        "      <td>11-5-2014</td>\n",
        "      <td>6806.0</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <td>326</td>\n",
+       "      <td>327</td>\n",
        "      <td>12-5-2014</td>\n",
        "      <td>7506.0</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <td>327</td>\n",
-       "      <td>day</td>\n",
-       "      <td>1.0</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
@@ -461,22 +461,22 @@
       ],
       "text/plain": [
        "         index      928\n",
-       "0    20-6-2013   3642.0\n",
-       "1    21-6-2013   9035.0\n",
-       "2    22-6-2013  10890.0\n",
-       "3    23-6-2013   7403.0\n",
-       "4    24-6-2013   8110.0\n",
+       "0           id    465.0\n",
+       "1    20-6-2013   3642.0\n",
+       "2    21-6-2013   9035.0\n",
+       "3    22-6-2013  10890.0\n",
+       "4    23-6-2013   7403.0\n",
        "..         ...      ...\n",
-       "323   9-5-2014   9571.0\n",
-       "324  10-5-2014   7615.0\n",
-       "325  11-5-2014   6806.0\n",
-       "326  12-5-2014   7506.0\n",
-       "327        day      1.0\n",
+       "323   8-5-2014   7210.0\n",
+       "324   9-5-2014   9571.0\n",
+       "325  10-5-2014   7615.0\n",
+       "326  11-5-2014   6806.0\n",
+       "327  12-5-2014   7506.0\n",
        "\n",
        "[328 rows x 2 columns]"
       ]
      },
-     "execution_count": 292,
+     "execution_count": 307,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -577,6 +577,13 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Analysis of the average number of steps per day"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 278,
    "metadata": {},
@@ -656,6 +663,13 @@
     "As shown by the violin plot, the data set is skewed right. The mean of this dataset is larger than the median which is causing the right skewedness. \n",
     "\n",
     "Next, we can take a look at the average and the standard deviation to review the amount of variance among the dataset"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Standard Deviation"
    ]
   },
   {
