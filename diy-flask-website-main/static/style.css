@@ -1,7 +1,10 @@
 .page-title {
+    background: red;
+    color:yellow;
     
 }
 
 .thumbnail {
+    max-width: 200px;
 
 }
